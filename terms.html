@@ -3,495 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms of Service for Mainali Software Enterprises LLC and its applications.">
-    <title>Terms of Service | Mainali Software Enterprises</title>
-    
-    <!-- Fonts -->
+    <title>Terms of Service — Mainali Software Enterprises LLC</title>
+    <meta name="description" content="Terms of Service for Mainali Software Enterprises LLC.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #1a2b4a;
-            --primary-light: #2d4a7c;
-            --accent: #3b82f6;
-            --text: #1f2937;
-            --text-light: #6b7280;
-            --bg: #ffffff;
-            --bg-soft: #f8fafc;
-            --border: #e5e7eb;
+            --navy: #0a1628; --navy-light: #111d33;
+            --accent: #3b82f6; --accent-light: #60a5fa; --accent-glow: rgba(59, 130, 246, 0.15);
+            --text-primary: #e8edf5; --text-secondary: #8899b4; --text-muted: #5a6d8a;
+            --border: rgba(255,255,255,0.06);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
         }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--navy); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 32px; background: rgba(10, 22, 40, 0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 80px; }
+        .logo { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-primary); text-decoration: none; letter-spacing: -0.3px; }
+        .logo span { color: var(--accent-light); }
+        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta { padding: 10px 24px; background: transparent; border: 1.5px solid var(--accent); color: var(--accent-light); border-radius: 6px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.3s ease; }
+        .nav-cta:hover { background: var(--accent); color: #fff; }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--text-primary); border-radius: 2px; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        .page-header { padding: 160px 0 60px; text-align: center; position: relative; }
+        .page-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+        .page-header h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 52px); font-weight: 700; margin-bottom: 16px; }
+        .page-header p { font-size: 16px; color: var(--text-muted); }
 
-        body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            background: var(--bg);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
+        .legal-content { max-width: 800px; margin: 0 auto; padding: 80px 32px 120px; }
+        .legal-content h2 { font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--text-primary); margin-top: 48px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+        .legal-content h2:first-of-type { margin-top: 0; }
+        .legal-content p { font-size: 15px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 16px; }
+        .legal-content ul { list-style: none; margin-bottom: 16px; padding-left: 0; }
+        .legal-content ul li { font-size: 15px; color: var(--text-secondary); line-height: 1.9; padding-left: 20px; position: relative; margin-bottom: 8px; }
+        .legal-content ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+        .legal-content a { color: var(--accent-light); text-decoration: none; transition: color 0.3s; }
+        .legal-content a:hover { color: #93bbfd; }
+        .legal-content strong { color: var(--text-primary); font-weight: 600; }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            padding: 1rem 2rem;
-        }
-
-        .nav-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Content */
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
-        }
-
-        .page-header {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .page-header .effective-date {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin: 2.5rem 0 1rem;
-            font-weight: 600;
-        }
-
-        h3 {
-            font-size: 1.15rem;
-            color: var(--primary);
-            margin: 2rem 0 0.75rem;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
-        ul, ol {
-            margin: 1rem 0 1.5rem 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .highlight-box {
-            background: var(--bg-soft);
-            border-left: 4px solid var(--accent);
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-        }
-
-        .warning-box {
-            background: #fef2f2;
-            border-left: 4px solid #ef4444;
-            padding: 1.25rem 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .warning-box p {
-            margin: 0;
-            color: #991b1b;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-
-        th, td {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border: 1px solid var(--border);
-        }
-
-        th {
-            background: var(--bg-soft);
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-logo span {
-            color: #60a5fa;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            text-decoration: none;
-        }
-
-        .footer-copyright {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.875rem;
-        }
+        footer { padding: 60px 0 32px; border-top: 1px solid var(--border); }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-left .logo { margin-bottom: 8px; display: block; }
+        .footer-left p { font-size: 13px; color: var(--text-muted); }
+        .footer-links { display: flex; gap: 28px; list-style: none; }
+        .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--text-secondary); }
+        .footer-bottom { text-align: center; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .content {
-                padding: 6rem 1.5rem 3rem;
-            }
-
-            .footer-links {
-                gap: 1.5rem;
-            }
-
-            table {
-                font-size: 0.875rem;
-            }
-
-            th, td {
-                padding: 0.5rem;
-            }
+            .container { padding: 0 20px; }
+            .nav-links, .nav-cta { display: none; }
+            .mobile-toggle { display: flex; }
+            .mobile-menu { display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0; background: rgba(10, 22, 40, 0.98); backdrop-filter: blur(20px); padding: 40px 32px; z-index: 999; }
+            .mobile-menu.open { display: block; }
+            .mobile-menu a { display: block; padding: 16px 0; color: var(--text-secondary); text-decoration: none; font-size: 18px; border-bottom: 1px solid var(--border); }
+            .legal-content { padding: 60px 20px 100px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Mainali<span>SE</span></a>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Mainali<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <a href="index.html#contact" class="nav-cta">Contact Us</a>
+            <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
-
-    <!-- Content -->
-    <div class="content">
-        <div class="page-header">
-            <h1>Terms of Service</h1>
-            <p class="effective-date">Effective Date: January 1, 2025 | Last Updated: January 27, 2026</p>
-        </div>
-
-        <h2>1. Introduction</h2>
-        <p>Welcome to Mainali Software Enterprises. These Terms of Service ("Terms") govern your use of mobile applications, websites, and digital services (collectively, the "Services") operated by Mainali Software Enterprises LLC ("Company," "we," "us," or "our").</p>
-        <p>By downloading, accessing, or using any of our Services, you agree to be bound by these Terms. If you do not agree to these Terms, do not use our Services.</p>
-
-        <h2>2. Applications Covered</h2>
-        <p>These Terms apply to all applications and services operated by Mainali Software Enterprises LLC, including but not limited to:</p>
-        <ul>
-            <li>HomeChata</li>
-            <li>IdeaRiz</li>
-            <li>Any future applications we develop and publish</li>
-        </ul>
-        <p>Individual applications may have supplementary terms specific to their functionality, which will be provided within the respective application.</p>
-
-        <h2>3. Eligibility</h2>
-        <p>You must be at least 13 years old to use our Services. If you are between 13 and 18 years old, your parent or legal guardian must agree to these Terms on your behalf.</p>
-        <p>By using our Services, you represent that:</p>
-        <ul>
-            <li>You are at least 18 years old, OR</li>
-            <li>You are between 13 and 18 and have obtained parental or guardian consent</li>
-        </ul>
-        <p>If you are under 13 years old, you are not permitted to use our Services.</p>
-
-        <h2>4. Account Registration</h2>
-        <p>To use certain features of our Services, you may need to create an account. You agree to:</p>
-        <ul>
-            <li>Provide accurate and complete information during registration</li>
-            <li>Maintain the confidentiality of your account credentials</li>
-            <li>Be responsible for all activities that occur under your account</li>
-            <li>Notify us immediately of any unauthorized use of your account</li>
-        </ul>
-        <p>You may register using your email address, Google account, or Apple ID, depending on the application.</p>
-
-        <h2>5. Purchases and Billing</h2>
-        
-        <h3>5.1 Payment Models</h3>
-        <p>Our applications may use various payment models, including but not limited to:</p>
-        <ul>
-            <li><strong>Free:</strong> No payment required for basic features</li>
-            <li><strong>One-time purchases:</strong> Pay once for permanent access to features or credits</li>
-            <li><strong>Credit/token systems:</strong> Purchase credits or tokens to use specific features</li>
-            <li><strong>Subscriptions:</strong> Recurring payments for ongoing access to premium features</li>
-            <li><strong>In-app purchases:</strong> Purchase additional content or features within the app</li>
-        </ul>
-        <p>Specific pricing and payment terms for each application are displayed within the respective app.</p>
-
-        <h3>5.2 Payment Processing</h3>
-        <p>All payments are processed through third-party payment processors (Apple App Store or Google Play Store). By making a purchase, you agree to their respective terms and conditions.</p>
-
-        <h3>5.3 Refund Policy</h3>
-        <div class="warning-box">
-            <p><strong>All purchases are final.</strong> Credits, tokens, subscriptions, and other digital goods are non-refundable once purchased. If you experience a technical issue preventing you from using your purchase, please contact us at <a href="mailto:contact@mainalienterprises.com" style="color: #991b1b;">contact@mainalienterprises.com</a>.</p>
-        </div>
-        <p>For subscription cancellations, please manage your subscription through your Apple App Store or Google Play Store account settings. Cancellations take effect at the end of the current billing period.</p>
-
-        <h3>5.4 Price Changes</h3>
-        <p>We reserve the right to change prices at any time. Price changes will not affect purchases already completed. For subscriptions, we will notify you of price changes before your next renewal.</p>
-
-        <h2>6. Description of Services</h2>
-        <p>Our applications provide various digital services and tools. The specific features and functionality vary by application and are described within each app.</p>
-        
-        <div class="highlight-box">
-            <p><strong>Our applications display information and data for informational purposes only.</strong> We do not provide professional advice, recommendations, or endorsements. Users are responsible for making their own decisions based on the information provided.</p>
-        </div>
-
-        <h2>7. Third-Party Data and APIs</h2>
-        <p>Our applications rely on third-party data sources and APIs to provide functionality. This may include but is not limited to:</p>
-        <ul>
-            <li>Location and mapping services</li>
-            <li>Place and business information</li>
-            <li>Ratings and reviews</li>
-            <li>Weather and environmental data</li>
-            <li>Other publicly available or licensed data</li>
-        </ul>
-
-        <div class="warning-box">
-            <p><strong>Third-Party Data Disclaimer:</strong> We do not guarantee the accuracy, completeness, timeliness, or reliability of any data provided by third-party sources. Third-party data is provided "as is" and may contain errors, omissions, or inaccuracies. We are not responsible for any decisions made based on third-party data displayed in our applications.</p>
-        </div>
-
-        <p>Third-party services are subject to their own terms and conditions. Your use of our applications that incorporate third-party services constitutes acceptance of those third-party terms.</p>
-
-        <h2>8. Data Accuracy and Limitations</h2>
-        <p>While we strive to provide accurate and useful information:</p>
-        <ul>
-            <li>Data may not be current or complete</li>
-            <li>Information may change without notice</li>
-            <li>Ratings, hours, and other details are provided by third parties and may be inaccurate</li>
-            <li>Location data and distances are approximate</li>
-            <li>Real-time data (such as air quality or weather) reflects conditions at the time of retrieval and may change</li>
-        </ul>
-        <p>Our applications are provided for informational purposes only. You should verify important information through official sources before making significant decisions.</p>
-
-        <h2>9. Acceptable Use</h2>
-        <p>You agree to use our Services only for lawful purposes. You agree NOT to:</p>
-        <ul>
-            <li>Use the Services for any illegal purpose</li>
-            <li>Attempt to access data or systems you are not authorized to access</li>
-            <li>Interfere with or disrupt the Services or servers</li>
-            <li>Reverse engineer, decompile, or disassemble the applications</li>
-            <li>Use automated systems, bots, or scrapers to access the Services</li>
-            <li>Share your account credentials with others</li>
-            <li>Resell or redistribute data obtained from our Services</li>
-            <li>Violate any applicable laws or regulations</li>
-            <li>Infringe on the rights of others</li>
-            <li>Upload malicious code or attempt to compromise security</li>
-        </ul>
-
-        <h2>10. Intellectual Property</h2>
-        <p>Our applications and their original content, features, and functionality are owned by Mainali Software Enterprises LLC and are protected by copyright, trademark, and other intellectual property laws.</p>
-        <p>The Mainali Software Enterprises name, logo, and all related marks are trademarks of Mainali Software Enterprises LLC.</p>
-        <p>Data displayed in our applications may be sourced from third parties and is subject to their respective terms and licenses.</p>
-
-        <h2>11. User Content</h2>
-        <p>Some of our applications may allow you to create, upload, or share content. By submitting content, you:</p>
-        <ul>
-            <li>Retain ownership of your content</li>
-            <li>Grant us a license to use, display, and distribute your content within the Services</li>
-            <li>Represent that you have the right to share the content</li>
-            <li>Agree not to submit content that is illegal, harmful, or violates others' rights</li>
-        </ul>
-        <p>We may remove any content that violates these Terms or is otherwise objectionable.</p>
-
-        <h2>12. Disclaimer of Warranties</h2>
-        <div class="warning-box">
-            <p>Our Services are provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied. We do not warrant that:</p>
-        </div>
-        <ul>
-            <li>The Services will be uninterrupted or error-free</li>
-            <li>Data will be accurate, complete, or reliable</li>
-            <li>The Services will meet your specific requirements</li>
-            <li>Any errors will be corrected</li>
-            <li>The Services will be compatible with all devices or operating systems</li>
-        </ul>
-        <p>To the fullest extent permitted by law, we disclaim all warranties, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
-
-        <h2>13. Limitation of Liability</h2>
-        <p>To the fullest extent permitted by law, Mainali Software Enterprises LLC shall not be liable for any:</p>
-        <ul>
-            <li>Indirect, incidental, special, consequential, or punitive damages</li>
-            <li>Loss of profits, revenue, or data</li>
-            <li>Business interruption</li>
-            <li>Damages arising from your reliance on information provided through our Services</li>
-            <li>Damages arising from third-party data or services</li>
-        </ul>
-        <p>Our total liability for any claim arising from your use of the Services shall not exceed the amount you paid for the Services in the 12 months preceding the claim, or $100, whichever is greater.</p>
-        <p>This limitation applies regardless of the theory of liability and even if we have been advised of the possibility of such damages.</p>
-
-        <h2>14. Indemnification</h2>
-        <p>You agree to indemnify and hold harmless Mainali Software Enterprises LLC, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorney fees) arising from:</p>
-        <ul>
-            <li>Your use of our Services</li>
-            <li>Your violation of these Terms</li>
-            <li>Your violation of any third-party rights</li>
-            <li>Content you submit through our Services</li>
-        </ul>
-
-        <h2>15. Termination</h2>
-        <p>We may terminate or suspend your account at any time, with or without cause, with or without notice. Upon termination:</p>
-        <ul>
-            <li>Your right to use our Services ceases immediately</li>
-            <li>Any unused credits, tokens, or prepaid amounts are forfeited</li>
-            <li>We may delete your account data</li>
-        </ul>
-        <p>You may delete your account at any time through the app settings or by contacting us. Account deletion is permanent and cannot be undone. Unused purchases are forfeited and cannot be recovered or refunded.</p>
-
-        <h2>16. Changes to Terms</h2>
-        <p>We reserve the right to modify these Terms at any time. If we make material changes, we will notify you through our applications or by email. Your continued use of our Services after changes are posted constitutes acceptance of the revised Terms.</p>
-        <p>We encourage you to review these Terms periodically for any updates.</p>
-
-        <h2>17. Governing Law</h2>
-        <p>These Terms are governed by and construed in accordance with the laws of the State of Maryland, United States, without regard to its conflict of law provisions.</p>
-        <p>Any disputes arising from these Terms or your use of our Services shall be resolved in the courts of Maryland.</p>
-
-        <h2>18. Severability</h2>
-        <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.</p>
-
-        <h2>19. Entire Agreement</h2>
-        <p>These Terms, together with our Privacy Policy and any application-specific terms, constitute the entire agreement between you and Mainali Software Enterprises LLC regarding your use of our Services.</p>
-
-        <h2>20. Contact Us</h2>
-        <p>If you have questions about these Terms, please contact us at:</p>
-        <p>
-            <strong>Mainali Software Enterprises LLC</strong><br>
-            Email: <a href="mailto:contact@mainalienterprises.com">contact@mainalienterprises.com</a><br>
-            Website: <a href="https://mainalisoftwareenterprises.com">mainalisoftwareenterprises.com</a>
-        </p>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="index.html#about" onclick="toggleMenu()">About</a>
+        <a href="index.html#portfolio" onclick="toggleMenu()">Portfolio</a>
+        <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
     </div>
 
-    <!-- Footer -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>Last updated: February 10, 2026</p>
+        </div>
+    </div>
+
+    <div class="legal-content">
+        <h2>Agreement to Terms</h2>
+        <p>By accessing or using the website mainalienterprises.com ("Site") operated by Mainali Software Enterprises LLC ("we," "our," or "us"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our Site.</p>
+
+        <h2>Use of Our Site</h2>
+        <p>You may use our Site only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+        <ul>
+            <li>Use the Site in any way that violates any applicable federal, state, local, or international law or regulation</li>
+            <li>Attempt to gain unauthorized access to any portion of the Site, or any systems or networks connected to the Site</li>
+            <li>Use any robot, spider, or other automatic device or manual process to monitor or copy any content from the Site</li>
+            <li>Introduce any viruses, trojan horses, worms, or other harmful material to the Site</li>
+            <li>Interfere with or disrupt the integrity or performance of the Site</li>
+        </ul>
+
+        <h2>Intellectual Property</h2>
+        <p>The Site and its entire contents, features, and functionality — including all information, software, text, displays, images, graphics, and the design, selection, and arrangement thereof — are owned by Mainali Software Enterprises LLC, its licensors, or other providers of such material, and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+        <p>You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Site without our prior written consent.</p>
+
+        <h2>Products and Services</h2>
+        <p>Mainali Software Enterprises LLC develops and operates various software products, mobile applications, and digital media properties. Each product or service may have its own additional terms and conditions that govern your use of that specific product or service. By using any of our products or services, you agree to comply with both these Terms and any applicable product-specific terms.</p>
+
+        <h2>Disclaimer of Warranties</h2>
+        <p>The Site is provided on an "as is" and "as available" basis without any warranties of any kind, either express or implied. We disclaim all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Site will be uninterrupted, timely, secure, or error-free.</p>
+
+        <h2>Limitation of Liability</h2>
+        <p>To the fullest extent permitted by applicable law, Mainali Software Enterprises LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of (or inability to access or use) the Site.</p>
+
+        <h2>Indemnification</h2>
+        <p>You agree to defend, indemnify, and hold harmless Mainali Software Enterprises LLC and its officers, directors, employees, and agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of the Site.</p>
+
+        <h2>Third-Party Links</h2>
+        <p>Our Site may contain links to third-party websites or services that are not owned or controlled by Mainali Software Enterprises LLC. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites or services.</p>
+
+        <h2>Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Maryland, United States, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms shall be brought exclusively in the courts located in Maryland.</p>
+
+        <h2>Changes to These Terms</h2>
+        <p>We reserve the right to modify or replace these Terms at any time at our sole discretion. If a revision is material, we will make reasonable efforts to provide notice prior to any new terms taking effect. Your continued use of the Site after changes constitutes acceptance of the modified Terms.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions about these Terms of Service, please contact us at:</p>
+        <p><strong>Mainali Software Enterprises LLC</strong><br>Maryland, USA<br>Email: <a href="mailto:contact@mainalienterprises.com">contact@mainalienterprises.com</a></p>
+    </div>
+
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Mainali<span>SE</span></div>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="index.html" class="logo">Mainali<span>.</span></a>
+                    <p>Mainali Software Enterprises LLC</p>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
             </div>
-            <p class="footer-copyright">© 2025 Mainali Software Enterprises LLC. All rights reserved.</p>
+            <div class="footer-bottom">&copy; 2026 Mainali Software Enterprises LLC. All rights reserved.</div>
         </div>
     </footer>
+    <script>function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }</script>
 </body>
 </html>
