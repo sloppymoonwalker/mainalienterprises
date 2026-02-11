@@ -189,7 +189,7 @@
             </button>
         </div>
     </nav>
-    <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu" style="display:none;">
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
         <a href="#news" onclick="toggleMenu()">News</a>
@@ -200,7 +200,7 @@
         <div class="hero-bg"><div class="hero-grid"></div></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">Maryland, USA &mdash; Est. 2022</div>
+                <div class="hero-badge">Maryland, USA &mdash; Est. 2025</div>
                 <h1>Technology That <span class="highlight">Powers Tomorrow</span></h1>
                 <p class="hero-description">Mainali Software Enterprises LLC is a technology holding company that builds, operates, and invests in consumer mobile apps, enterprise software platforms, and digital media brands.</p>
                 <div class="hero-actions">
@@ -383,7 +383,7 @@
     <script>
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
-        function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+        function toggleMenu() { var m = document.getElementById('mobileMenu'); if (m.style.display === 'block') { m.style.display = 'none'; } else { m.style.display = 'block'; } }
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) { setTimeout(() => { entry.target.classList.add('visible'); }, index * 100); observer.unobserve(entry.target); }
